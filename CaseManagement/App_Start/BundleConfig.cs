@@ -9,8 +9,8 @@ namespace CaseManagement
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"
-                        //"~/Scripts/jquery-ui.js"
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-ui.js"
                        
                         ));
 
@@ -28,8 +28,8 @@ namespace CaseManagement
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      //"~/Content/bootstrap-flatly.css",
-                      //"~/Content/jquery-ui.css",
+                      "~/Content/bootstrap-flatly.css",
+                      "~/Content/jquery-ui.css",
                       "~/Content/site.css"));
         }
     }
