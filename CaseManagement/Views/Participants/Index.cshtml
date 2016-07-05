@@ -8,35 +8,36 @@
 
 
 <h2>Participants</h2>
+   
+<div class="row top-spacing">
+
+    @Html.ActionLink("Add Participant", "Create", "Participants", new { @class = "btn btn-warning" })
+    </div>
+    <table class="table table-bordered table-hover">
+
+        <thead>
+
+            <tr>
+
+                <th>Participants</th>
+                <th>Date of Birth</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach (var participant in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(participant.Name, "Details", "Participants", new { id = participant.Id }, null) </td>
+
+                    <td>@participant.BirthDate.ToString("dd MMM yyyy")</td>
 
 
-@Html.ActionLink("Add Participant", "Create", "Participants", new { @class = "btn btn-warning"})
+                </tr>
+            }
 
-       <table class="table table-bordered table-hover">
-    
-    <thead>
-        
-        <tr>
-            
-            <th>Participants</th>
-            <th>Date of Birth</th>
-            
-        </tr>
-        
-    </thead>
-    
-    <tbody>
-                 @foreach (var participant in Model)
-                        {
-                          <tr>
-                                <td>@Html.ActionLink(participant.Name, "Details", "Participants", new {id = participant.Id }, null) </td>
+        </tbody>
 
-                              <td>@participant.BirthDate.ToString("dd MMM yyyy")</td>
-
-
-                            </tr>
-                        }
-        
-    </tbody>
-    
-</table>
+    </table>

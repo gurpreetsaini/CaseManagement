@@ -43,7 +43,7 @@ namespace CaseManagement.Controllers
             var partipant = _context.Participants.SingleOrDefault(c => c.Id == Id);
 
 
-            return View("Details", partipant);
+            return View("ParticipantForm", partipant);
         }
 
 
@@ -51,15 +51,22 @@ namespace CaseManagement.Controllers
         public ActionResult Save(Participants participant)
         {
 
-            if (!ModelState.IsValid)
-                return HttpNotFound();
+            //if (!ModelState.IsValid)
+            //    return HttpNotFound("error in validation");
 
-            var movieInDb = _context.Participants.Single(m => m.Id == participant.Id);
-            movieInDb.Name = participant.Name;
-            movieInDb.BirthDate = participant.BirthDate;
-            movieInDb.Address = participant.Address;
-            movieInDb.Gender = participant.Gender;
+            if (participant.Id == 0)
+            {
+                _context.Participants.Add(participant);
 
+            }
+            else
+            {
+                var participantInDb = _context.Participants.Single(m => m.Id == participant.Id);
+                participantInDb.Name = participant.Name;
+                participantInDb.BirthDate = participant.BirthDate;
+                participantInDb.Address = participant.Address;
+                participantInDb.Gender = participant.Gender;
+            }
 
 
             _context.SaveChanges();
@@ -68,7 +75,18 @@ namespace CaseManagement.Controllers
             
         }
 
+        public ActionResult Create()
+        {
+            var participants = _context.Participants.ToList();
 
+
+            return View("ParticipantForm");
+        }
+
+        public ActionResult CreateNewCasenote()
+        {
+            return View("NewCasenote");
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaseManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,26 @@ namespace CaseManagement.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+
+        private ApplicationDbContext _context;
+
+
+        public HomeController()
         {
-            return View();
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+        public ActionResult Index()
+
+        {
+
+            var participant = _context.Participants.ToList();
+
+            return View(participant);
         }
 
         public ActionResult About()

@@ -1,34 +1,64 @@
-﻿@{
+﻿@model IEnumerable<CaseManagement.Models.Participants>
+
+@{
     ViewBag.Title = "Dashboard";
 }
 
-@*<div class="jumbotron">
-    <h1>Case Manager</h1>
-    <p class="lead"></p>
-    <p><a href="#" class="btn btn-primary btn-lg">Caseload &raquo;</a></p>
-</div>*@
-<div class="row">
+
+<div class="row top-spacing">
    
+
+<div class="col-lg-4 LeftHandSide">
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Caseload</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+
+            @foreach (var participant in Model)
+            {
+                <li class="list-group-item">@Html.ActionLink(participant.Name, "Details", "Participants", new { id = participant.Id }, null)</li>
+
+            }
+
+
+
+        </ul>
+
+
+    </div>
+</div>
+    </div>
+<div class="col-lg-4">
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Task</h3>
+    </div>
+    <div class="panel-body">
+        Panel content
+    </div>
+    </div>
 </div>
 
+<div class="col-lg-4">
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title">Deadlines</h3>
+        </div>
+        <div class="panel-body">
+            Panel content
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</div>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Caseload</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-primary" href="#">View all Cases &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Tasks</h2>
-        <p>.</p>
-        <p><a class="btn btn-primary" href="#">View all Tasks &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Messages</h2>
-        <p>.</p>
-        <p><a class="btn btn-primary" href="#">View all Messages &raquo;</a></p>
-    </div>
+    
 </div>

@@ -24,3 +24,19 @@ textarea {
 }
 
 
+.top-spacing{
+    padding: 10px;
+
+}
+
+textarea{
+    height:200px;
+    width:800px;
+
+
+}
+.caseNoteWidthHeight {
+height:200px;
+    width:800px;
+
+}

@@ -28,6 +28,7 @@ namespace CaseManagement.Models
         public DbSet<Roles> Role { get; set; }
         public DbSet<Case> Case { get; set; }
         public DbSet<CaseNote> CaseNote  { get; set; }
+        public DbSet<Family> Family { get; set; }
 
 
         public ApplicationDbContext()

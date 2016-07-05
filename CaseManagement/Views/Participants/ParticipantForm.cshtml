@@ -4,7 +4,7 @@
     ViewBag.Title = "Personal Information";
 }
 
-<h2>@Model.Name's Personal Information</h2>
+<h2>Add or edit Personal Information</h2>
 
 @using (Html.BeginForm("Save", "Participants"))
                 {
@@ -23,15 +23,15 @@
     <div class="form-group">
 
         @Html.LabelFor(m => m.Gender)
-        @*<div class="btn" data-toggle="buttons">
-            <label class="btn btn-danger active">
-                @Html.RadioButtonFor(m => m.Gender, "Male") Male
-            </label>
-            <label class="btn btn-danger">
-                @Html.RadioButtonFor(m =>m.Gender, "Female") Female
-            </label>
-
-        </div>*@
+                @*<div class="btn" data-toggle="buttons">
+                    <label class="btn btn-danger active">
+                        @Html.RadioButtonFor(m => m.Gender, "Male") Male
+                    </label>
+                    <label class="btn btn-danger">
+                        @Html.RadioButtonFor(m =>m.Gender, "Female") Female
+                    </label>
+        
+                </div>*@
         @Html.TextBoxFor(m => m.Gender, new { @class = "form-control"})
 
     </div>

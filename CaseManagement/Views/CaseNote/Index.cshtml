@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CaseManagement.Models.CaseNote>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of Case Notes</h2>
+
+
+<div class="row top-spacing">
+
+@Html.ActionLink("Create New Casenote", "Details", "CaseNote", new { @class = "btn btn-danger"})
+
+</div>
+<table class="table table-bordered table-hover">
+
+    <thead>
+
+        <tr>
+
+            <th>Case Notes</th>
+            <th>Date Added</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach (var casenote in Model)
+            {
+            <tr>
+                <td>@Html.ActionLink(casenote.Title, "Detaila", "CaseNote", new { id = casenote.Id }, null) </td>
+
+                <td>@casenote.DateAdded.ToString("dd MMM yyyy")</td>
+
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
