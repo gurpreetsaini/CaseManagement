@@ -195,15 +195,21 @@
     <Compile Include="Migrations\201607050205348_addingCaseNote.Designer.cs">
       <DependentUpon>201607050205348_addingCaseNote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607061001146_addviewmodel.cs" />
+    <Compile Include="Migrations\201607061001146_addviewmodel.Designer.cs">
+      <DependentUpon>201607061001146_addviewmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Case.cs" />
+    <Compile Include="Models\CaseController.cs" />
     <Compile Include="Models\CaseNote.cs" />
     <Compile Include="Models\Family.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Participants.cs" />
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="ViewModels\CaseParticpantCasenoteViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -272,6 +278,7 @@
     <Content Include="Views\Shared\_navbar2.cshtml" />
     <Content Include="Views\CaseNote\Index.cshtml" />
     <Content Include="Views\CaseNote\NewCaseNote.cshtml" />
+    <Content Include="Views\Case\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607050205348_addingCaseNote.resx">
       <DependentUpon>201607050205348_addingCaseNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607061001146_addviewmodel.resx">
+      <DependentUpon>201607061001146_addviewmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

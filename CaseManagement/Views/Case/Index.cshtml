@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Caseload";
+}
+
+<h2 class="h2">Caseload</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        
+   <tr>
+       <th>Case Name</th>
+       
+
+   </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+            {
+            <tr>
+
+
+                @*<td>@Html.ActionLink(item.Name, "Details", "Case", new { id = item.Id }, null) </td>*@
+
+
+
+            </tr>
+
+        }
+
+
+
+
+
+
+
+    </tbody>
+
+
+
+
+</table>
+

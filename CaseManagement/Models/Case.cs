@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CaseManagement.Models
@@ -14,6 +15,10 @@ namespace CaseManagement.Models
         public List<Participants> Participants { get; set; }
         public int CaseNotesId { get; set; }
         public List<CaseNote> CaseNotes { get; set; }
+        public DateTime DateOpened { get; set; }
+        public DateTime? DateUpdated { get; set; }
+        public DateTime? DateClosed { get; set; }
+        public Participants KeyWorker { get; set; }
 
 
     }
